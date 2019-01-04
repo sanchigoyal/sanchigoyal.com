@@ -35,13 +35,13 @@ export default class SgHeader extends React.Component {
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="mr-auto" navbar>
               <NavItem>
-                <NavLink href="#">
+                <NavLink href="/travel-with-me">
                   <FontAwesomeIcon icon={["fas", "plane-departure"]} /> Travel
                   With Me
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="#">
+                <NavLink href="/code-with-me">
                   <FontAwesomeIcon icon={["fas", "code"]} /> Code With Me
                 </NavLink>
               </NavItem>
