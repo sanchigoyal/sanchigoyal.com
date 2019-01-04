@@ -5,7 +5,7 @@ import { fab } from '@fortawesome/free-brands-svg-icons'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 import SgHeader from './components/sg-header/SgHeader'
 import SgFooter from './components/sg-footer/SgFooter'
-import SgProfile from './components/sg-profile/SgProfile'
+import Profile from './components/profile/Profile'
 
 // this makes font-awesome icons available globally
 library.add(fab);
@@ -16,7 +16,7 @@ class App extends Component {
     return (
       <div className="App">
           <SgHeader></SgHeader>
-          <SgProfile></SgProfile>
+          <Profile></Profile>
           <SgFooter></SgFooter>
       </div>
     );
