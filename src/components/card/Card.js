@@ -1,7 +1,6 @@
 import React from 'react'
 import { Card, 
     CardImg, 
-    CardText, 
     CardBody,
     CardTitle, 
     CardSubtitle, 
@@ -33,9 +32,7 @@ const card = (props) => {
                         <CardSubtitle className="lead">{props.subTitle}</CardSubtitle>
                         <div className="text-muted">{props.duration}</div>
                         <div className="text-muted">{props.location}</div>
-                        <CardText>
-                            {props.children}
-                        </CardText>
+                        <div>{props.children}</div>
                     </CardBody>
                 </Col>
             </Row>

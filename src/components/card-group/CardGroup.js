@@ -1,5 +1,6 @@
 import React from 'react';
 import Card from '../card/Card'
+import { CardText } from 'reactstrap'
 import './CardGroup.css'
 
 const cardGroup = (props) => {
@@ -14,9 +15,9 @@ const cardGroup = (props) => {
                         }   
                     </ul>
    } else if (record.body){
-        cardBody = <span>
+        cardBody = <CardText>
                         {record.body}
-                   </span>
+                   </CardText>
    }
     
    return (
