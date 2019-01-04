@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   Collapse,
   Navbar,
@@ -7,8 +7,8 @@ import {
   Nav,
   NavItem,
   NavLink
-} from 'reactstrap';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+} from "reactstrap";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default class SgHeader extends React.Component {
   constructor(props) {
@@ -36,12 +36,13 @@ export default class SgHeader extends React.Component {
             <Nav className="mr-auto" navbar>
               <NavItem>
                 <NavLink href="#">
-                  <FontAwesomeIcon icon={['fas', 'plane-departure']}/> Travel With Me
+                  <FontAwesomeIcon icon={["fas", "plane-departure"]} /> Travel
+                  With Me
                 </NavLink>
               </NavItem>
               <NavItem>
                 <NavLink href="#">
-                <FontAwesomeIcon icon={['fas', 'code']}/> Code With Me
+                  <FontAwesomeIcon icon={["fas", "code"]} /> Code With Me
                 </NavLink>
               </NavItem>
             </Nav>
