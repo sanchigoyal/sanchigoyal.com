@@ -1,0 +1,57 @@
+.course-content {
+    padding-top: 30px;
+}
+.course-content> pre {
+    background-color: #f6f8fa;
+    border-radius: 3px;
+    font-size: 85%;
+    line-height: 1.45;
+    overflow: auto;
+    padding: 16px;
+}
+
+.course-content> pre > code {
+    font-family: monospace, monospace;
+    font-size: 1em;
+}
+
+.course-content> table {
+    border: 1px solid #dee2e6;
+    margin-bottom: 1em;
+    background-color: transparent;
+    box-sizing: border-box;
+    border-collapse: collapse;
+    display: table;
+    border-spacing: 2px;
+}
+
+.course-content> table > thead {
+    display: table-header-group;
+    vertical-align: middle;
+    border-color: inherit;
+    text-align: center;
+}
+
+.course-content> table > tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+
+.course-content> table tr {
+    border-top: 1px solid #c6cbd1;
+    background: #fff;
+}
+
+.course-content> table th {
+    border: 1px solid #c6cbd1;
+    padding: 6px 13px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.course-content> table td {
+    border: 1px solid #c6cbd1;
+    padding: 6px 13px;
+    white-space: nowrap;
+}
