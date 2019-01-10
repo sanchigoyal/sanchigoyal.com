@@ -1,14 +1,72 @@
-import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React, { Component } from "react";
+import axios from "axios";
+import { Container } from "reactstrap";
+import TimelineEvent from "./timeline-event/TimelineEvent";
+import InstagramPost from "./instagram-post/InstagramPost";
+import UnderConstruction from "../under-construction/UnderConstruction";
 
-const travelWithMe = () => {
-  return (
-    <div className="text-center">
-      <br />
-      <FontAwesomeIcon icon={["fas", "exclamation-triangle"]} size="4x" />
-      <h2 className="text-center">Page Under Construction</h2>
-    </div>
-  );
-};
+class TravelWithMe extends Component {
+  constructor() {
+    super();
+    this.state = {
+      instagram: {
+        user: {},
+        data: []
+      }
+    };
+  }
 
-export default travelWithMe;
+  componentDidMount() {
+    let profileId = "sanchi-goyal";
+    let profileUrl =
+      "https://s3-us-west-1.amazonaws.com/sanchigoyal.com/resources/profiles/" +
+      profileId +
+      "/instagram.json";
+
+    axios
+      .get(profileUrl, {
+        headers: {
+          Accept: "application/json"
+        },
+        mode: "cors",
+        cache: "no-cache"
+      })
+      .then(response => {
+        const instagram = {
+          ...response.data
+        };
+        this.setState({ instagram });
+      });
+  }
+
+  render() {
+    console.log(this.state.instagram);
+    const timelineEvents = this.state.instagram.data.map((record, index) => {
+      console.log(record);
+      return (
+        <TimelineEvent
+          key={index}
+          iconType="fas"
+          icon="exclamation-triangle"
+          color="success"
+        >
+          <InstagramPost 
+            user={this.state.instagram.user.username}
+            profile_picture={this.state.instagram.user.profile_picture}
+            url={record.images.url} 
+            caption={record.caption.text}
+            likes={record.likes.count}
+            link={record.link}
+            location={record.location.name}/>
+        </TimelineEvent>
+      );
+    });
+    return (
+      <Container>
+        <UnderConstruction></UnderConstruction>
+      </Container>
+    );
+  }
+}
+
+export default TravelWithMe;

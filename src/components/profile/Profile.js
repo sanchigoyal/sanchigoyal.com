@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Container } from "reactstrap";
-import Jumbotron from "../jumbotron/Jumbotron";
-import CardGroup from "../card-group/CardGroup";
-import Skills from "../skills/Skills";
+import Jumbotron from "./jumbotron/Jumbotron";
+import CardGroup from "./card-group/CardGroup";
+import Skills from "./skills/Skills";
 
 class Profile extends Component {
   constructor() {
