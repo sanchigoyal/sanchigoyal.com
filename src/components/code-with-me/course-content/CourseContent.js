@@ -36,7 +36,7 @@ class CourseContent extends Component {
   render() {
     return (
       <Container>
-        <div class="course-content">
+        <div className="course-content">
           <ReactMarkdown source={this.state.courseContent} />
         </div>
       </Container>
