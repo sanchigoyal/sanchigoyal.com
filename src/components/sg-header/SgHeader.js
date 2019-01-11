@@ -9,6 +9,7 @@ import {
   NavLink
 } from "reactstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import "./SgHeader.css";
 
 export default class SgHeader extends React.Component {
   constructor(props) {
@@ -45,6 +46,11 @@ export default class SgHeader extends React.Component {
                   <FontAwesomeIcon icon={["fas", "code"]} /> Code With Me
                 </NavLink>
               </NavItem>
+            </Nav>
+            <Nav className="ml-auto" navbar>
+              <span className="text-only">
+                Powered by <FontAwesomeIcon icon={["fab", "react"]} />
+              </span>
             </Nav>
           </Collapse>
         </Navbar>
