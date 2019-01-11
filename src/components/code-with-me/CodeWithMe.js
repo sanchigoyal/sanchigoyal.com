@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Container } from "reactstrap";
 import axios from "axios";
+import SearchBar from "./search-bar/SearchBar";
 import CardGroup from "./card-group/CardGroup";
 
 class CodeWithMe extends Component {
@@ -9,7 +10,8 @@ class CodeWithMe extends Component {
     this.state = {
       code: {
         projects: []
-      }
+      },
+      displayedProjects: []
     };
   }
 
@@ -33,13 +35,33 @@ class CodeWithMe extends Component {
           ...response.data
         };
         this.setState({ code });
+        this.setState({ displayedProjects: code.projects });
       });
   }
+
+  onSearchContentChange = event => {
+    const searchString = event.target.value;
+    if (!searchString || searchString === "") {
+      // set to original list.
+      this.setState({ displayedProjects: this.state.code.projects });
+    } else {
+      // obtain ones that are matching the search string.
+      const displayedProjects = this.state.code.projects.filter(
+        project =>
+          project.heading
+            .toLowerCase()
+            .startsWith(searchString.toLowerCase()) ||
+          project.heading.toLowerCase().includes(searchString.toLowerCase())
+      );
+      this.setState({ displayedProjects: displayedProjects });
+    }
+  };
 
   render() {
     return (
       <Container>
-        <CardGroup cards={this.state.code.projects}></CardGroup>
+        <SearchBar change={this.onSearchContentChange} />
+        <CardGroup cards={this.state.displayedProjects} />
       </Container>
     );
   }
